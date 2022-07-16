@@ -1,6 +1,6 @@
 <h1 align="center">Several Nights Booking System</h1>
-<hr />
 <p>The Several Nights  is a simple apartment booking system that will allow you to find accommodation in any city</p>
+<hr />
 
 <h1>Instalation</h1>
 <h3>Step 1: Install the Dependencies</h3>
