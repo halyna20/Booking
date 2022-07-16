@@ -12,9 +12,9 @@
 <p>2) Go to the created folder and clone the repository</p>
 <h3>Step 3: Change Docker config.</h3>
 <p>Change the docker-compose / dockerfile (update network name, ports, etc)</p>
-<p>Create **mysql** folder</p>
+<p>Create <b>mysql</b> folder</p>
 <h3>Step 4: Start Docker</h3>
-<p>Run `docker-compose up -d --build`</p>
+<p>Run docker-compose up -d --build</p>
 <h3>Step 5: Сonnection to DB </h3>
 <p>Copy .env.example file to .env and edit database credentials there</p>
 <h3>Step 6: Install of the framework's dependencies</h3>
