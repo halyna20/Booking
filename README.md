@@ -6,7 +6,7 @@
 <h3>Step 1: Install the Dependencies</h3>
 <p>1) Instal the <a href="https://docs.docker.com/engine/install/ubuntu/">Docker for Linux</a> or <a href="https://docs.docker.com/desktop/install/windows-install/">Docker for Windows</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a><p>
 <p>2) Install <a href="https://nodejs.org/uk/download/">Node.js</a></p>
-<p>3) Next install the <a href="https://getcomposer.org/doc/00-intro.md">Composer</a</p>
+<p>3) Next install the <a href="https://getcomposer.org/doc/00-intro.md">Composer</a></p>
 <h3>Step 2: Get Project</h3>
 <p>1) Create a directory where you want to use this Docker project.</p>
 <p>2) Go to the created folder and clone the repository</p>
