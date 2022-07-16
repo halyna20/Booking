@@ -14,15 +14,15 @@
 <p>Change the docker-compose / dockerfile (update network name, ports, etc)</p>
 <p>Create <b>mysql</b> folder</p>
 <h3>Step 4: Start Docker</h3>
-<p>Run docker-compose up -d --build</p>
+<p>Run <b>docker-compose up -d --build</b></p>
 <h3>Step 5: Сonnection to DB </h3>
-<p>Copy .env.example file to .env and edit database credentials there</p>
+<p>Copy <b>.env.example</b> file to <b>.env</b> and edit database credentials there</p>
 <h3>Step 6: Install of the framework's dependencies</h3>
-<p>Run `composer install`</p>
+<p>Run <b>composer install</b></p>
 <h3>Step 7: Migration</h3>
-<p>Run `php artisan key:generate`</p>
-<p>Run `php artisan migrate --seed` (it has some seeded data for your testing)</p>
+<p>Run <b>php artisan key:generate</b></p>
+<p>Run <b>php artisan migrate --seed</b> (it has some seeded data for your testing)</p>
 <h3>Step 8: Compile the files</h3>
-<p>Run `npm install && npm run dev`</p>
+<p>Run <b>npm install && npm run dev</b></p>
 <h3>Step 9: Config file</h3>
-<p>Go to /src/resources/js/config.js and update network name </p>
+<p>Go to <b>/src/resources/js/config.js</b> and update network name </p>
