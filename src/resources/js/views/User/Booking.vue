@@ -1,5 +1,5 @@
 <template>
-  <section class="user-booking">
+  <section class="user-booking page">
     <div class="container">
       <h3 class="text-center fw-bolder mt-4 mb-4">Мої бронювання</h3>
       <div

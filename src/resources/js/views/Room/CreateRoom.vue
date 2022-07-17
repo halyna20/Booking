@@ -1,5 +1,5 @@
 <template>
-  <div class="container create-room">
+  <div class="container page create-room">
     <div class="row clearfix">
       <div class="col-md-12">
         <div class="card">

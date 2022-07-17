@@ -4,12 +4,12 @@ import config from '../../config/config';
 
 
 const state = {
-    cities: [],
     apartments: [],
     errors: new Object,
     searchParam: new Object,
     apartmentDetails: [],
-    rooms: []
+    rooms: [],
+    findError: ""
 }
 
 const actions = {
@@ -32,25 +32,22 @@ const actions = {
 
         commit('setSearchParam', search)
 
-        try {
-            await axios.get(config.API_URL + '/search', { params })
-                .then(res => {
-                    console.log(res.data)
-                    if (res.data.error) {
-                        commit('setApartments', res.data)
-                    } else {
-                        commit('setApartments', res.data.data)
-                    }
 
-                })
+        await axios.get(config.API_URL + '/search', { params })
+            .then(res => {
+                console.log(res.data)
+                if (res.data.error) {
+                    commit('setFindError', res.data)
+                } else {
+                    commit('setApartments', res.data.data)
+                    router.push({ path: '/search-result' })
+                }
 
-            await router.push({ path: '/search-result' })
-        } catch (e) {
-            if (e.response.status === 422) {
-                commit('setErrors', e.response.data.errors)
-            }
-
-        }
+            }).catch(e => {
+                if (e.response.status === 422) {
+                    commit('setErrors', e.response.data.errors)
+                }
+            })
     },
     async getApartment({ commit, state }) {
         const params = state.searchParam
@@ -64,11 +61,11 @@ const actions = {
 }
 
 const mutations = {
-    setCities(state, cities) {
-        state.cities = cities
-    },
     setApartments(state, apartments) {
         state.apartments = apartments
+    },
+    setFindError(state, findError) {
+        state.findError = findError
     },
     setErrors(state, errors) {
         state.errors = errors
@@ -86,17 +83,14 @@ const mutations = {
 
 
 const getters = {
-    citiesFound(state) {
-        return state.cities
-    },
     getApartments(state) {
         return state.apartments
     },
+    getFindError(state) {
+        return state.findError
+    },
     getErrors(state) {
         return state.errors
-    },
-    getMessage(state) {
-        return state.message
     },
     getSearchParam(state) {
         return state.searchParam

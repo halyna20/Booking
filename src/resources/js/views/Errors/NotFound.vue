@@ -1,5 +1,7 @@
 <template>
-  <div class="d-flex flex-column justify-content-center align-items-center">
+  <div
+    class="page d-flex flex-column justify-content-center align-items-center"
+  >
     <img :src="baseUrl + '/img/error/sad.gif'" alt="" srcset="" />
     <h1 class="error">Сторінку не знайдено</h1>
   </div>

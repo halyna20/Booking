@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <div class="register-page">
-      <form class="form">
+  <div class="page">
+    <div class="register-page m-auto d-flex pt-5">
+      <form class="form position-relative m-auto p-5 text-center">
         <div class="mb-3">
           <input
             type="text"
             placeholder="email"
             v-model="email"
             :class="{ 'is-invalid': errors.email }"
-            class="form-control"
+            class="form-control border-0"
           />
           <div v-show="errors.email" class="invalid-feedback">
             <span v-for="emailError in errors.email" :key="emailError">
@@ -22,7 +22,7 @@
             placeholder="Пароль"
             v-model="password"
             :class="{ 'is-invalid': errors.password }"
-            class="form-control"
+            class="form-control border-0"
           />
           <div v-show="errors.password" class="invalid-feedback">
             <span v-for="passwordError in errors.password" :key="passwordError">
@@ -36,12 +36,14 @@
             placeholder="Повторіть пароль"
             v-model="password_confirmation"
             :class="{ 'is-invalid': errors.password }"
-            class="form-control"
+            class="form-control border-0"
           />
         </div>
-        <button type="submit" @click.prevent="register">Зареєструватись</button>
+        <button type="submit" class="btn btn-yellow" @click.prevent="register">
+          Зареєструватись
+        </button>
 
-        <p class="message">
+        <p class="message m-3 fs-6">
           Вже зареєстровані?
           <router-link to="/user/login">Увійти </router-link>
         </p>
@@ -77,44 +79,3 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.register-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-  display: flex;
-}
-.form {
-  position: relative;
-  z-index: 1;
-  background-color: var(--color-grey-dark-1);
-  background-image: linear-gradient(rgba(#101d2c, 0.93), rgba(#101d2c, 0.93)),
-    url(/../../../img/book.jpg);
-  background-size: cover;
-  background-position: center;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 0 rgba(0, 0, 0, 0.2);
-}
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.form .message {
-  margin: 15px;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #c69963;
-  text-decoration: none;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container page">
     <div class="row justify-content-center mt-5">
       <div class="col-md-8">
         <div class="card">
@@ -10,16 +10,6 @@
               Посилання для підвердження було надіслано на вашу електронну
               адресу. Перед тим як продовжити, будь ласка, перевірте свою пошту
             </div>
-
-            <p>
-              Не отримали лист? Натисніть на кнопку, щоб відправити повторно
-            </p>
-            <!--action="{{ route('verification.resend') }}-->
-            <form class="d-inline" method="POST">
-              <button type="submit" class="btn btn-yellow m-0 align-baseline">
-                Відправити
-              </button>
-            </form>
           </div>
         </div>
       </div>

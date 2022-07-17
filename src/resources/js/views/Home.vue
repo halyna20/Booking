@@ -1,9 +1,9 @@
 <template lang="">
-    <div>
+    <section>
         <banner />
         <search />
         <about />
-    </div>
+    </section>
 </template>
 <script>
 import Search from "../components/home/Search.vue";

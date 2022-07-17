@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <section class="apartment-details page">
     <apartment-details></apartment-details>
     <room></room>
-  </div>
+  </section>
 </template>
 
 <script>

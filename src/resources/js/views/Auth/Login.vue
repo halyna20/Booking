@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="login-page">
-      <form class="form">
+  <div class="page">
+    <div class="login-page d-flex m-auto pt-5">
+      <form class="form position-relative m-auto p-5 text-center">
         <div class="mb-3">
           <input
             type="email"
@@ -30,16 +30,18 @@
             </span>
           </div>
         </div>
-        <button type="submit" @click.prevent="submitLogin">Увійти</button>
+        <button
+          class="btn btn-yellow"
+          type="submit"
+          @click.prevent="submitLogin"
+        >
+          Увійти
+        </button>
 
         <p class="message">
-          Ще не зареєстровані?
+          Ще не зареєстровані? <br />
           <router-link to="/user/registration">Створити акаунт</router-link>
         </p>
-
-        <router-link to="/forgot-password">
-          <p class="message">Забули пароль? <a href="#">Змінити пароль</a></p>
-        </router-link>
       </form>
     </div>
   </div>
@@ -67,33 +69,3 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-  display: flex;
-}
-/* The alert message box */
-.alert {
-  padding: 20px;
-  background-color: #f44336; /* Red */
-  color: white;
-  margin-bottom: 15px;
-}
-/* The close button */
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-/* When moving the mouse over the close button */
-.closebtn:hover {
-  color: black;
-}
-</style>

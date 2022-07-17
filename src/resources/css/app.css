@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap');
 
+html {
+    display: flex;
+    min-height: 100%;
+}
+
 body {
     background: #ffffff;
     font-family: 'Poppins';
@@ -7,6 +12,16 @@ body {
     font-weight: 400;
     font-size: 16px;
     min-height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
 }
 
 .active,
@@ -76,9 +91,8 @@ textarea.form-control {
     text-transform: capitalize;
 }
 
-.create-apartment,
-.create-room {
-    min-height: calc(100vh - 230px - 83px);
+.page {
+    flex: 1 1 auto;
 }
 
 /*header*/
@@ -148,7 +162,31 @@ textarea.form-control {
     margin-top: 28px;
 }
 
-/*about*/
+/*====REGISTRATION=====*/
+.form {
+    z-index: 1;
+    background-color: #343a40;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form .message {
+    margin: 15px;
+    color: #b3b3b3;
+}
+
+.form .message a {
+    color: #c69963;
+    text-decoration: none;
+}
+
+/*===Login===*/
+.login-page {
+    width: 360px;
+}
+
+/*===ABOUT===*/
 .about {
     margin-top: 150px;
     margin-bottom: 140px;
@@ -217,9 +255,21 @@ textarea.form-control {
     color: #FFFFFF;
 }
 
+/*=====CONFIRM BOOKING=====*/
+.booking-container {
+    background: #F7FAFC;
+    border-radius: 10px;
+    padding: 25px 100px
+}
+
+.booking-container h4.confirm-title {
+    margin-left: 155px;
+}
+
 /*======FOOTER======*/
 footer {
     background: #EDEDED;
+    flex: 0 0 200px;
 }
 
 .footer-img {

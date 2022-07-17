@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mt-5">
     <div
       v-if="error"
       class="alert alert-danger d-flex align-items-center"
@@ -7,7 +7,7 @@
     >
       {{ error }}
     </div>
-    <div class="row">
+    <div class="row justify-content-around">
       <table class="table w-75">
         <thead>
           <tr>
