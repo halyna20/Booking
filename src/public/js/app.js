@@ -23000,8 +23000,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       chekedRoom: [],
       token: null,
-      error: "" //user: null,
-
+      error: ""
     };
   },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapGetters)({
@@ -23009,7 +23008,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     user: "auth/getUser"
   })),
   updated: function updated() {
-    this.getToken(); //this.getUser();
+    this.getToken();
   },
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapMutations)({
     setBooking: "booking/setBookingRooms"
@@ -23044,10 +23043,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     getToken: function getToken() {
       this.token = localStorage.getItem("x_xsrf_token");
-    } //getUser() {
-    //  this.user = JSON.parse(localStorage.getItem("user"));
-    //},
-
+    }
   })
 });
 
@@ -23088,7 +23084,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Banner"
+});
 
 /***/ }),
 
@@ -23281,8 +23279,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   name: "Links",
   data: function data() {
     return {
-      token: null //user: null,
-
+      token: null
     };
   },
   mounted: function mounted() {
@@ -23676,7 +23673,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   name: "Book",
   computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)({
     roomsBooking: "booking/getBookingRooms",
-    error: "booking/getMessage",
+    message: "booking/getMessage",
     userParam: "main/getSearchParam"
   })), {}, {
     images: function images() {
@@ -23686,7 +23683,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         images.push(JSON.parse(this.roomsBooking[key].image));
       }
 
-      console.log(images);
       return images;
     },
     total: function total() {
@@ -23703,7 +23699,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     addBooking: "booking/addBooking"
   })), {}, {
     sendBookingRoom: function sendBookingRoom() {
-      console.log("ok");
       this.addBooking();
     }
   })
@@ -23887,11 +23882,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     this.getBooking();
   },
-  updated: function updated() {
-    this.booking;
-  },
   computed: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)({
-    booking: "user/getBooking"
+    booking: "user/getBooking",
+    message: "booking/getDeleteMessage"
   })), {}, {
     images: function images() {
       var images = [];
@@ -23968,10 +23961,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       currentDate = currentDate.toISOString().split("T")[0];
       return currentDate;
     },
-    deleteBooking: function deleteBooking(bookingDateId, bookingRoomId) {
+    deleteBooking: function deleteBooking(bookingDateId) {
       this.bookingDelete({
-        bookingDateId: bookingDateId,
-        bookingRoomId: bookingRoomId
+        bookingDateId: bookingDateId
       });
     }
   })
@@ -24762,7 +24754,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<p>{{token}}</p>"), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [$data.token ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  }), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [$data.token ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     "class": "notification-img",
     src: $data.baseUrl + '/img/bell.png'
   }, null, 8
@@ -24846,14 +24838,7 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Бронювання");
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "#"
-}, "Something else here")], -1
-/* HOISTED */
-);
-
-var _hoisted_15 = {
+var _hoisted_14 = {
   key: 4,
   "class": "nav-item"
 };
@@ -24936,7 +24921,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_14])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.token ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  })])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.token ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return _ctx.logout && _ctx.logout.apply(_ctx, arguments);
     }, ["prevent"])),
@@ -25991,7 +25976,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_5 = {
   key: 0,
-  "class": "alert alert-danger d-flex align-items-center",
+  "class": "alert alert-light d-flex align-items-center",
   role: "alert"
 };
 var _hoisted_6 = {
@@ -26038,7 +26023,7 @@ var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, _ctx.error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.error), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, _ctx.message ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.message), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.roomsBooking, function (i, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
@@ -26476,85 +26461,95 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_4 = {
   key: 0,
-  "class": "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+  "class": "alert alert-success",
+  role: "alert"
 };
 var _hoisted_5 = {
+  key: 1,
+  "class": "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+};
+var _hoisted_6 = {
   "class": "card",
   style: {
     "max-width": "350px"
   }
 };
-var _hoisted_6 = ["src"];
-var _hoisted_7 = {
+var _hoisted_7 = ["src"];
+var _hoisted_8 = {
   "class": "card-img-overlay p-0"
 };
-var _hoisted_8 = {
+var _hoisted_9 = {
   "class": "card-text p-2"
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "card-body"
 };
-var _hoisted_10 = {
-  "class": "card-title"
-};
 var _hoisted_11 = {
-  "class": "card-text"
+  "class": "card-title"
 };
 var _hoisted_12 = {
   "class": "card-text"
 };
 var _hoisted_13 = {
-  "class": "d-flex justify-content-between align-items-center"
+  "class": "card-text"
 };
 var _hoisted_14 = {
+  "class": "d-flex justify-content-between align-items-center"
+};
+var _hoisted_15 = {
   "class": "text-muted"
 };
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_16 = ["onClick"];
-var _hoisted_17 = {
-  key: 1,
+var _hoisted_17 = ["onClick"];
+var _hoisted_18 = {
+  key: 2,
   "class": "d-flex align-items-center justify-content-center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, Object.keys(_ctx.booking).includes('rooms') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.roomsCount, function (i, index) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _ctx.message != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.message), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), Object.keys(_ctx.booking).includes('rooms') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.roomsCount, function (i, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "col",
       key: i
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       src: $options.images[index]['link'][0],
       "class": "card-img-top",
       alt: ""
     }, null, 8
     /* PROPS */
-    , _hoisted_6), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.status[index][index]), 1
+    , _hoisted_7), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.status[index][index]), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.apartment[index][0]["name"]), 1
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.apartment[index][0]["name"]), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.apartment[index][0]["city"]["name"]), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.apartment[index][0]["city"]["name"]), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.rooms[index][0]["price"]) + " грн. ", 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.rooms[index][0]["price"]) + " грн. ", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" з " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.booking_date[index]["date_from"]) + " ", 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" з " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.booking_date[index]["date_from"]) + " ", 1
     /* TEXT */
-    ), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" по " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.booking_date[index]["date_to"]), 1
+    ), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" по " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.booking_date[index]["date_to"]), 1
     /* TEXT */
     )]), $options.cancel[index][index] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
       key: 0,
       type: "button",
       "class": "btn btn-sm btn-outline-danger",
+      style: {
+        "z-index": "20"
+      },
       onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-        return $options.deleteBooking(_ctx.booking.booking_date[index]['id'], _ctx.booking.booking_date[index].booking_rooms[0]['id']);
+        return $options.deleteBooking(_ctx.booking.booking_date[index]['id']);
       }, ["prevent"])
     }, " Скасувати ", 8
     /* PROPS */
-    , _hoisted_16)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
+    , _hoisted_17)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.message), 1
+  ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.booking.message), 1
   /* TEXT */
   )]))])]);
 }
@@ -27194,7 +27189,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var state = {
   bookingRooms: null,
-  message: ""
+  message: "",
+  deleteMessage: ""
 };
 var actions = {
   addBooking: function addBooking(_ref) {
@@ -27212,9 +27208,11 @@ var actions = {
               }).then(function (res) {
                 if (res.data.error) {
                   commit('setMessage', res.data.error);
+                } else {
+                  commit('setMessage', "Бронювання здійснено");
                 }
               })["catch"](function (err) {
-                console.log(err);
+                if (err.response.status === 422) commit('setMessage', err.response.data);
               });
 
             case 3:
@@ -27227,19 +27225,19 @@ var actions = {
   },
   deleteBooking: function deleteBooking(_ref2, _ref3) {
     return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var dispatch, bookingDateId, bookingRoomId;
+      var commit, dispatch, bookingDateId;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              dispatch = _ref2.dispatch;
-              bookingDateId = _ref3.bookingDateId, bookingRoomId = _ref3.bookingRoomId;
+              commit = _ref2.commit, dispatch = _ref2.dispatch;
+              bookingDateId = _ref3.bookingDateId;
               _context2.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_2___default()["delete"](_config_config__WEBPACK_IMPORTED_MODULE_1__["default"].API_URL + "/bookingDate/".concat(bookingDateId, "/delete")).then(function (res) {
                 dispatch('user/getBooking', null, {
                   root: true
                 });
-                console.log(res.data.message);
+                commit('setDeleteMessage', res.data.message);
               });
 
             case 4:
@@ -27257,6 +27255,9 @@ var mutations = {
   },
   setMessage: function setMessage(state, message) {
     state.message = message;
+  },
+  setDeleteMessage: function setDeleteMessage(state, deleteMessage) {
+    state.deleteMessage = deleteMessage;
   }
 };
 var getters = {
@@ -27265,6 +27266,9 @@ var getters = {
   },
   getMessage: function getMessage(state) {
     return state.message;
+  },
+  getDeleteMessage: function getDeleteMessage(state) {
+    return state.deleteMessage;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -27480,8 +27484,6 @@ var actions = {
               return axios__WEBPACK_IMPORTED_MODULE_0___default().get(_config_config__WEBPACK_IMPORTED_MODULE_2__["default"].API_URL + '/search', {
                 params: params
               }).then(function (res) {
-                console.log(res.data);
-
                 if (res.data.error) {
                   commit('setFindError', res.data);
                 } else {
@@ -27784,8 +27786,7 @@ var actions = {
               }).then(function (res) {
                 commit('auth/setUser', res.data.data, {
                   root: true
-                }); //localStorage.user = JSON.stringify(res.data.data);
-                //this.$parent.user = JSON.parse(localStorage.getItem("user"));
+                });
               });
 
             case 4:

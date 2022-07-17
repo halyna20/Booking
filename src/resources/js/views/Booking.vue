@@ -4,11 +4,11 @@
       <div class="booking-container">
         <h4>Підтвердження бронювання</h4>
         <div
-          v-if="error"
-          class="alert alert-danger d-flex align-items-center"
+          v-if="message"
+          class="alert alert-light d-flex align-items-center"
           role="alert"
         >
-          {{ error }}
+          {{ message }}
         </div>
         <div class="list-group m-auto">
           <div
@@ -56,7 +56,7 @@ export default {
   computed: {
     ...mapGetters({
       roomsBooking: "booking/getBookingRooms",
-      error: "booking/getMessage",
+      message: "booking/getMessage",
       userParam: "main/getSearchParam",
     }),
     images() {
@@ -65,7 +65,6 @@ export default {
         images.push(JSON.parse(this.roomsBooking[key].image));
       }
 
-      console.log(images);
       return images;
     },
     total() {
@@ -79,7 +78,6 @@ export default {
   methods: {
     ...mapActions({ addBooking: "booking/addBooking" }),
     sendBookingRoom() {
-      console.log("ok");
       this.addBooking();
     },
   },

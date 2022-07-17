@@ -64,4 +64,17 @@ class Service extends MySqlService
             $this->handleException($exception);
         }
     }
+
+    public function destroy($id)
+    {
+        DB::beginTransaction();
+        try {
+            $user = Auth::user();
+            $bookingDate =  $user->booking_dates()->findOrFail($id);
+            $bookingDate->delete($id);
+            DB::commit();
+        } catch (Exception $exception) {
+            $this->handleException($exception);
+        }
+    }
 }

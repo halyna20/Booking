@@ -11,7 +11,6 @@ use App\Services\Room\Service;
 class RoomController extends Controller
 {
 
-
     protected Service $roomService;
 
     public function __construct(Service $roomService)

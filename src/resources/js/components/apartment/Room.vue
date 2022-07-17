@@ -58,7 +58,6 @@ export default {
       chekedRoom: [],
       token: null,
       error: "",
-      //user: null,
     };
   },
   computed: {
@@ -66,7 +65,6 @@ export default {
   },
   updated() {
     this.getToken();
-    //this.getUser();
   },
   methods: {
     ...mapMutations({ setBooking: "booking/setBookingRooms" }),
@@ -97,10 +95,7 @@ export default {
 
     getToken() {
       this.token = localStorage.getItem("x_xsrf_token");
-    },
-    //getUser() {
-    //  this.user = JSON.parse(localStorage.getItem("user"));
-    //},
+    }
   },
 };
 </script>

@@ -13,8 +13,6 @@ const actions = {
             country_id: country,
         }).then((res) => {
             commit('auth/setUser', res.data.data, { root: true })
-            //localStorage.user = JSON.stringify(res.data.data);
-            //this.$parent.user = JSON.parse(localStorage.getItem("user"));
         });
     },
 

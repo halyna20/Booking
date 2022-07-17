@@ -4,7 +4,8 @@ import axios from "axios";
 
 const state = {
     bookingRooms: null,
-    message: ""
+    message: "",
+    deleteMessage: ""
 }
 const actions = {
     async addBooking({ state, rootState, commit }) {
@@ -12,20 +13,22 @@ const actions = {
             .then(res => {
                 if (res.data.error) {
                     commit('setMessage', res.data.error);
+                } else {
+                    commit('setMessage', "Бронювання здійснено")
                 }
             }).catch(err => {
-                
-                console.log(err)
+                if (err.response.status === 422)
+                    commit('setMessage', err.response.data)
             })
 
     },
 
-    async deleteBooking({ dispatch }, { bookingDateId, bookingRoomId }) {
+    async deleteBooking({ commit, dispatch }, { bookingDateId }) {
 
         await axios.delete(config.API_URL + `/bookingDate/${bookingDateId}/delete`)
             .then(res => {
                 dispatch('user/getBooking', null, { root: true });
-                console.log(res.data.message)
+                commit('setDeleteMessage', res.data.message);
             })
     }
 }
@@ -36,6 +39,9 @@ const mutations = {
     },
     setMessage(state, message) {
         state.message = message
+    },
+    setDeleteMessage(state, deleteMessage) {
+        state.deleteMessage = deleteMessage
     }
 }
 const getters = {
@@ -44,6 +50,9 @@ const getters = {
     },
     getMessage(state) {
         return state.message
+    },
+    getDeleteMessage(state) {
+        return state.deleteMessage
     }
 }
 

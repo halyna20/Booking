@@ -35,7 +35,6 @@ const actions = {
 
         await axios.get(config.API_URL + '/search', { params })
             .then(res => {
-                console.log(res.data)
                 if (res.data.error) {
                     commit('setFindError', res.data)
                 } else {

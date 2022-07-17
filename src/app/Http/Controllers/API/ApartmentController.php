@@ -8,19 +8,16 @@ use App\Http\Requests\Apartment\SearchRequest;
 use App\Http\Resources\Apartment\ApartmentCollection;
 use App\Http\Resources\Apartment\ApartmentResource;
 use App\Models\Apartment;
-use App\Models\Room;
+use App\Http\Controllers\Controller;
 use App\Services\Apartment\Service;
 
-class ApartmentController extends BaseController
+class ApartmentController extends Controller
 {
-    protected Apartment $apartment;
-    protected Room $room;
+
     protected Service $apartmentService;
 
-    public function __construct(Apartment $apartment, Room $room, Service $apartmentService)
+    public function __construct(Service $apartmentService)
     {
-        $this->apartment = $apartment;
-        $this->room = $room;
         $this->apartmentService = $apartmentService;
     }
 

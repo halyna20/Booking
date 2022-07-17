@@ -2,6 +2,9 @@
   <section class="user-booking page">
     <div class="container">
       <h3 class="text-center fw-bolder mt-4 mb-4">Мої бронювання</h3>
+      <div class="alert alert-success" role="alert" v-if="message != ''">
+        {{ message }}
+      </div>
       <div
         class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
         v-if="Object.keys(booking).includes('rooms')"
@@ -34,11 +37,9 @@
                   v-if="cancel[index][index]"
                   type="button"
                   class="btn btn-sm btn-outline-danger"
+                  style="z-index: 20"
                   @click.prevent="
-                    deleteBooking(
-                      booking.booking_date[index]['id'],
-                      booking.booking_date[index].booking_rooms[0]['id']
-                    )
+                    deleteBooking(booking.booking_date[index]['id'])
                   "
                 >
                   Скасувати
@@ -67,11 +68,12 @@ export default {
   created() {
     this.getBooking();
   },
-  updated() {
-    this.booking;
-  },
+
   computed: {
-    ...mapGetters({ booking: "user/getBooking" }),
+    ...mapGetters({
+      booking: "user/getBooking",
+      message: "booking/getDeleteMessage",
+    }),
     images() {
       let images = [];
       if (this.booking.apartment !== null) {
@@ -141,10 +143,9 @@ export default {
       currentDate = currentDate.toISOString().split("T")[0];
       return currentDate;
     },
-    deleteBooking(bookingDateId, bookingRoomId) {
+    deleteBooking(bookingDateId) {
       this.bookingDelete({
         bookingDateId,
-        bookingRoomId,
       });
     },
   },

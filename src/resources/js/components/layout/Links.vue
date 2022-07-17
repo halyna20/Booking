@@ -54,7 +54,6 @@
           >Бронювання</router-link
         >
       </li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
     </ul>
   </li>
   <li class="nav-item" v-if="token">
@@ -63,14 +62,12 @@
 </template>
 
 <script>
-
 import { mapActions } from "vuex";
 export default {
   name: "Links",
   data() {
     return {
       token: null,
-      //user: null,
     };
   },
   mounted() {
